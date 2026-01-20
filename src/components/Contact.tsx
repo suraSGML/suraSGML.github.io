@@ -67,9 +67,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "surafel@example.com", href: "mailto:surafel@example.com" },
+    { icon: Mail, label: "Email", value: "suragirma90@gmail.com", href: "mailto:suragirma90@gmail.com" },
     { icon: MapPin, label: "Location", value: "Debre Markos, Ethiopia", href: "#" },
-    { icon: Phone, label: "Phone", value: "+251 XXX XXX XXX", href: "tel:+251000000000" },
+    { icon: Phone, label: "Phone", value: "+251 993 703 305", href: "tel:+251993703305" },
   ];
 
   return (

@@ -11,6 +11,7 @@ const projects = [
       "A modern online bookstore platform with a clean UI, allowing users to browse, search, and purchase books with ease. Features a comprehensive catalog and seamless shopping experience.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://cloudbookstoreproject.lovable.app",
+    githubUrl: "https://github.com/suraSGML/cloudbookstoreproject",
     icon: BookOpen,
     gradient: "from-blue-500 to-cyan-500",
   },
@@ -20,6 +21,7 @@ const projects = [
       "A professional hotel website showcasing rooms, amenities, and booking capabilities. Designed to provide visitors with an immersive preview of the hotel experience.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://gozamenhotelproject.lovable.app",
+    githubUrl: "https://github.com/suraSGML",
     icon: Building,
     gradient: "from-emerald-500 to-teal-500",
   },
@@ -29,6 +31,7 @@ const projects = [
       "An elegant hotel management website featuring room displays, service information, and reservation functionality. Built with modern design principles for optimal user engagement.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://meskeremhotelproject.lovable.app",
+    githubUrl: "https://github.com/suraSGML",
     icon: UtensilsCrossed,
     gradient: "from-orange-500 to-amber-500",
   },
@@ -110,7 +113,7 @@ const Projects = () => {
                     className="border-border hover:bg-secondary"
                     asChild
                   >
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="View source code">
                       <Github size={16} />
                     </a>
                   </Button>
