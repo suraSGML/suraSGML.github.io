@@ -98,9 +98,9 @@ const Hero = () => {
             className="flex gap-6 justify-center"
           >
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
+              { icon: Github, href: "https://github.com/suraSGML", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Mail, href: "mailto:surafel@example.com", label: "Email" },
+              { icon: Mail, href: "mailto:suragirma90@gmail.com", label: "Email" },
             ].map((social) => (
               <motion.a
                 key={social.label}
