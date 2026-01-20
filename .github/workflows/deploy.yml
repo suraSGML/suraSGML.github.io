@@ -28,7 +28,8 @@ jobs:
         run: npm ci
 
       - name: Build project with correct base
-        run: npm run build -- --base /
+        # Important: force base = '/' so GitHub Pages works
+        run: npx vite build --base /
 
       - name: Add 404 fallback for routing
         run: cp dist/index.html dist/404.html
