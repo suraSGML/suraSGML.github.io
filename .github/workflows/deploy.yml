@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Lovable React + TS to GitHub Pages
 
 on:
   push:
@@ -10,12 +10,8 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,19 +30,23 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Add 404 fallback for GitHub Pages routing
+        run: |
+          cp dist/index.html dist/404.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
 
     environment:
       name: github-pages
 
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
