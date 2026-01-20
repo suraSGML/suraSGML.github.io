@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, BookOpen, Building, UtensilsCrossed } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import projectBookstore from "@/assets/project-bookstore.jpg";
+import projectGozamen from "@/assets/project-gozamen.jpg";
+import projectMeskerem from "@/assets/project-meskerem.jpg";
 
 const projects = [
   {
@@ -12,7 +15,7 @@ const projects = [
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://cloudbookstoreproject.lovable.app",
     githubUrl: "https://github.com/suraSGML/cloudbookstoreproject",
-    icon: BookOpen,
+    image: projectBookstore,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
@@ -21,8 +24,8 @@ const projects = [
       "A professional hotel website showcasing rooms, amenities, and booking capabilities. Designed to provide visitors with an immersive preview of the hotel experience.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://gozamenhotelproject.lovable.app",
-    githubUrl: "https://github.com/suraSGML",
-    icon: Building,
+    githubUrl: "https://github.com/suraSGML/gozamenhotelproject",
+    image: projectGozamen,
     gradient: "from-emerald-500 to-teal-500",
   },
   {
@@ -31,8 +34,8 @@ const projects = [
       "An elegant hotel management website featuring room displays, service information, and reservation functionality. Built with modern design principles for optimal user engagement.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://meskeremhotelproject.lovable.app",
-    githubUrl: "https://github.com/suraSGML",
-    icon: UtensilsCrossed,
+    githubUrl: "https://github.com/suraSGML/meskeremhotelproject",
+    image: projectMeskerem,
     gradient: "from-orange-500 to-amber-500",
   },
 ];
@@ -51,9 +54,12 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-medium mb-2 tracking-wider uppercase">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills in web development and design.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -65,13 +71,15 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="group glass-card overflow-hidden hover-lift"
             >
-              {/* Project Header */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <project.icon size={64} className="text-white/80" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+              {/* Project Image */}
+              <div className="h-48 relative overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
               </div>
 
               {/* Project Content */}
