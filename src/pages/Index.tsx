@@ -1,9 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Achievements from "@/components/Achievements";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Blog from "@/components/Blog";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -14,9 +18,13 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Achievements />
         <Services />
         <Projects />
+        <Experience />
         <Skills />
+        <Blog />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
